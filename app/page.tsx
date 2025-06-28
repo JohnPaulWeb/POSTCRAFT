@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Instagram, Linkedin, Menu, Twitter, Youtube } from "lucide-react";
+import { Instagram, Linkedin, Menu, Plus, Twitter, Youtube } from "lucide-react";
 import MobileNav from "./components/mobile-nav";
 import Link from "next/link";
 import SocialMedia from "./components/SocialMedia";
@@ -83,6 +83,13 @@ export default function Page() {
           <h2 className="text-xl sm:text-2xl font-black mb-4">Connected Accounts</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <SocialMedia platform="Instagram" username="@yourband" icon={<Instagram className="h-6 w-6" />} color="bg-gradient-to-br from-purple-500 to-pink-500" />
+            <SocialMedia platform="Twitter" username="@yourband" icon={<Twitter className="h-6 w-6" />} color="bg-gradient-to-br from-blue-400 to-blue-600" />
+            <SocialMedia platform="LinkedIn" username="@yourband" icon={<Linkedin className="h-6 w-6" />} color="bg-gradient-to-br from-blue-700 to-blue-900" />
+            <SocialMedia platform="YouTube" username="@yourband" icon={<Youtube className="h-6 w-6" />} color="bg-gradient-to-br from-red-500 to-red-700" />
+            <Button className="h-full min-h-[120px] border-4 border-dashed border-black rounded-xl flex flex-col items-center justify-center gap-2 bg-white/50 hover:bg-white/70">
+              <Plus className="h-8 w-8" />
+              <span className="font-bold">Add Account</span>
+            </Button>
           </div>
         </div>
       </div>
