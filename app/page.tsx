@@ -4,6 +4,8 @@ import { Instagram, Linkedin, Menu, Plus, Twitter, Youtube } from "lucide-react"
 import MobileNav from "./components/mobile-nav";
 import Link from "next/link";
 import SocialMedia from "./components/SocialMedia";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import ContentCreator from "./components/ContentCreator";
 
 
 export default function Page() {
@@ -11,7 +13,7 @@ export default function Page() {
 
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 p-2 sm:p-4 md:p-8">
       
-      <div className="w-full max-w-7xl mx-auto backdrop-blur-xl bg-white/30 border-4 border-black rounded-3xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto backdrop-xblur-xl bg-white/30 border-4 border-black rounded-3xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
 
       <header className="border-b-4 border-black p-4 sm:p-6 bg-white/40 backdrop-blur-md">
 
@@ -91,6 +93,36 @@ export default function Page() {
               <span className="font-bold">Add Account</span>
             </Button>
           </div>
+        </div>
+
+        <div className="mb-10">
+          <h2 className="text-xl sm:text-2xl font-black mb-4">Create Content</h2>
+          <Tabs defaultValue="post" className="w-full">
+            <TabsList className="w-full bg-white/50 border-2 border-black rounded-xl p-1 mb-4">
+            <TabsTrigger value="post" className="rounded-lg data-[state=active]:bg-black data-[state=active]:text-white font-bold">
+              Post
+            </TabsTrigger>
+            <TabsTrigger value="post" className="rounded-lg data-[state=active]:bg-black data-[state=active]:text-white font-bold">
+              Story
+            </TabsTrigger>
+            <TabsTrigger value="post" className="rounded-lg data-[state=active]:bg-black data-[state=active]:text-white font-bold">
+              Video
+            </TabsTrigger>
+            </TabsList>
+            <TabsContent value="post">
+              <ContentCreator type="post" />
+            </TabsContent>
+            <TabsContent value="story">
+              <ContentCreator type="story" />
+            </TabsContent>
+            <TabsContent value="video">
+              <ContentCreator type="video" />
+            </TabsContent>
+          </Tabs>
+        </div>
+
+        <div className="text-xl sm:text-2xl font-black mb-4">
+          Content Studio
         </div>
       </div>
       </div>
