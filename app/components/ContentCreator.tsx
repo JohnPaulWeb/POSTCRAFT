@@ -84,9 +84,39 @@ export default function ContentCreator({ type }: ContentCreatorProps) {
                                         <Label className="font-bold">Turn off Comments</Label>
                                         <Switch />
                                     </div>
+                                     <div className="flex items-center justify-between">
+                                        <Label className="font-bold">Alt Text</Label>
+                                        <Switch />
+                                    </div>
                                 </div>
                             </TabsContent>
                         </Tabs>
+                    </div>
+                )}
+
+                {type === "story" && (
+                    <div className="space-y-4">
+                        <h3 className="font-bold text-lg">Story Settings</h3>
+                        <div className="grid grid-cols-2 gap-4">
+                            <Button variant="outline" className="border-2 border-black rounded-xl font-bold">
+                                Add Sticker
+                            </Button>
+                              <Button variant="outline" className="border-2 border-black rounded-xl font-bold">
+                                Add Text
+                            </Button>
+                              <Button variant="outline" className="border-2 border-black rounded-xl font-bold">
+                                Add Sticker
+                            </Button>
+                              <Button variant="outline" className="border-2 border-black rounded-xl font-bold">
+                                Add Sticker
+                            </Button>
+                        </div>
+                    </div>
+                )}
+
+                {type === "video" && (
+                    <div className="space-y-4">
+                        <h3 className="font-bold text-lg">Video Settings</h3>
                     </div>
                 )}
             </Card>
